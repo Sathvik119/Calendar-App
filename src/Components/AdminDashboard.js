@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './App.css'; // Assuming styles are placed in App.css
 
 const AdminDashboard = () => {
   const [companies, setCompanies] = useState([]);
