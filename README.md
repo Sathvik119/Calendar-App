@@ -1,70 +1,157 @@
-# Getting Started with Create React App
+# Communication Tracking System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+1. [Project Overview](#project-overview)
+2. [Features](#features)
+3. [Tech Stack](#tech-stack)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [Project Structure](#project-structure)
+7. [Components Overview](#components-overview)
+8. [Styles](#styles)
+9. [Future Improvements](#future-improvements)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Project Overview
+The **Communication Tracking System** is a React-based web application designed to streamline communication management between users and companies. It provides an interface to log, track, and analyze communication records using dashboards for both users and admins, with an integrated analytics module.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
+- **Admin Dashboard:**
+  - Add companies with details like name, location, emails, phone numbers, and communication periodicity.
+  - View, delete, and manage company data.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **User Dashboard:**
+  - Add new companies with next communication schedules.
+  - Log communications and automatically schedule follow-ups.
+  - Highlight overdue and due-today communications.
 
-### `npm test`
+- **Analytics Module:**
+  - Visual representation of communication frequency by type using bar charts.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Centralized Navigation:**
+  - A dynamic menu to navigate between Home, User, Admin, and Analytics pages.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tech Stack
+- **Frontend:** React.js
+- **Styling:** CSS (centralized in `App.css`)
+- **Charting Library:** react-chartjs-2 (built on Chart.js)
+- **Routing:** React Router DOM
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/communication-tracking-system.git
+   cd communication-tracking-system
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+4. Open the application in your browser at `http://localhost:3000`.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Usage
+1. **Home Page:**
+   - Serves as a landing page with a brief introduction.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Admin Dashboard:**
+   - Add and manage companies with various attributes.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. **User Dashboard:**
+   - Schedule and log communications with companies.
+   - Highlight overdue and upcoming tasks.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. **Analytics Dashboard:**
+   - Visualize communication frequency by type using bar charts.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project Structure
+```
+src/
+|-- Components/
+|   |-- AdminDashboard.js       # Admin dashboard functionality
+|   |-- UserDashboard.js        # User dashboard functionality
+|   |-- Analytics.js            # Analytics module with charts
+|-- App.js                      # Main application component
+|-- App.css                     # Consolidated styling for the app
+|-- index.js                    # Entry point of the application
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Components Overview
+### 1. **AdminDashboard.js**
+- Manages company information.
+- Allows CRUD operations on companies.
+- Uses forms for input fields and dynamic table updates.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 2. **UserDashboard.js**
+- Displays companies and their last/next communication logs.
+- Highlights overdue communications in red and due-today in yellow.
+- Includes a modal for logging new communication entries.
 
-### Analyzing the Bundle Size
+### 3. **Analytics.js**
+- Integrates `react-chartjs-2` for visual analytics.
+- Displays communication frequency by type.
+- Dynamically updates based on user and admin logs.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 4. **App.js**
+- Handles routing for the application using `react-router-dom`.
+- Includes a navigation menu and centralizes page rendering.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Styles
+The styling for the application is consolidated into `App.css`, which includes:
+- **Global Styles:**
+  - Reset and base styles.
+- **Layouts:**
+  - Centered container for main components.
+- **Navigation:**
+  - Horizontal menu bar with hover effects.
+- **Tables and Forms:**
+  - Styled input fields, buttons, and tables for an enhanced UI/UX.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Future Improvements
+1. **Backend Integration:**
+   - Connect the app to a backend (e.g., Node.js, Express) with a database (e.g., MongoDB) to persist data.
 
-### Deployment
+2. **Authentication:**
+   - Implement user authentication to restrict access to admin and user dashboards.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+3. **Advanced Analytics:**
+   - Add pie charts, line graphs, and filters for more detailed insights.
 
-### `npm run build` fails to minify
+4. **Responsive Design:**
+   - Ensure the app is fully responsive for mobile and tablet views.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5. **Email and Notification Integration:**
+   - Send automated reminders for upcoming or overdue communications.
+
+---
+
+## Contributors
+- **Your Name** - (https://github.com/Sathvik119)
+
+---
+
+
+
+
+
+
